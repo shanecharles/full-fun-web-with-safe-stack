@@ -35,14 +35,22 @@
 
 ***
 
-### Path
+### You will see
 
 - What is SAFE Stack
 - Setup
-- Server
-- Client
+- Fable + Elmish
+- Saturn
 - Azure
 - Summary
+
+***
+
+### You will not see
+
+- Aesthetics
+- UX
+- Security
 
 ***
 
@@ -107,7 +115,7 @@
 ---
 ### Installing Fake
 
-> C:\ > dotnet tool install fake-cli -g
+> dotnet tool install fake-cli -g
 
 - Linux/OSx: `~/.dotnet/tools`
 - Windows: `%USERPROFILE%\.dotnet\tools`
@@ -116,21 +124,21 @@
 
 ### Installing and Running SAFE 
 
-- C:\ > dotnet new -i SAFE.Template
-
-- C:\ > dotnet new SAFE
-
-- C:\ > fake build --target run
+- Command Line
+ - dotnet new -i SAFE.Template
+ - dotnet new SAFE
+ - fake build --target run
 
 --- 
 ### Patience for first run
 
+![bored](images/bored.gif)
 
 ***
 
 ### Fable + Elmish 
 
-> Fable is a compiler for F# to javascript.
+> Fable is a F# to javascript compiler.
 > Elmish is a frontend paradigm based on the Elm Architecture.
 
 ---
@@ -145,16 +153,41 @@
 
 
 ---
-### Bare Example
+### Demos
 ***
 ### Saturn
 
+- Standalone Server
 - Abstraction on Giraffe
 - Inspired by Phoenix (Elixir)
 - MVC pattern
 
 ---
+### Opinionated 
 
+- Convention over configuration
+ - Dapper
+ - Simple.Migrations
+- Scaffolding scripts
+ - `dotnet saturn` command line tool
+
+---
+### Computation Expressions
+
+- pipeline
+- controller
+- router
+ - formerly `scope`
+
+---
+### Router functions
+
+- pipe_through
+- get, getf
+- post
+- forward
+
+***
 
 ### Extra Resources
 
