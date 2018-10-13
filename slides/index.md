@@ -188,7 +188,22 @@
 - forward
 
 ***
+### Deploy to Azure
 
+- Docker
+- App Service
+ - Create azure enabled project
+ - dotnet new SAFE --deploy azure
+
+---
+### App Service
+
+- Azure Active Directory App Registration
+ - https://safe-stack.github.io/docs/template-azure-registration/#creating-an-app-registration
+- Detailed deploy instructions
+ - https://safe-stack.github.io/docs/template-appservice/
+
+***
 ### Extra Resources
 
 - F# for Fun and Profit 
