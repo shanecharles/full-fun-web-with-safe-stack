@@ -48,13 +48,13 @@
 
 ### You will not see
 
-- Aesthetics
-- UX
-- Security
+- Nice Aesthetics
+- Good UX
+- Any Security
 
 ***
 
-### SAFE
+### SAFE History
 
 - Server
 - Azure
@@ -98,7 +98,7 @@
 
 ---
 
-### SAFE Default
+### SAFE Defaults
 
 - Saturn
 - Azure
@@ -129,32 +129,58 @@
  - dotnet new SAFE
  - fake build --target run
 
---- 
-### Patience for first run
 
 ![bored](images/bored.gif)
 
 ***
 
-### Fable + Elmish 
+### Fable 
 
-> Fable is a F# to javascript compiler.
-> Elmish is a frontend paradigm based on the Elm Architecture.
+- F# to javascript compiler
+- Recently released version 2
 
 ---
-### Elm Architecture
+### Elmish
 
-- Model
-- View
-- Update
+- front-end paradigm 
+- Elm Architecture
+ - Model
+ - View
+ - Update
 
 ---
 ### Flow
 
+![Flow](images/elm_flow.png)
+
+---
+### Changing State
+
+- Update
+ - Strongly typed messages
+- Triggers
+ - Commands: user or state events
+ - Subscriptions: external events
+
+---
+### Flow State
+
+![Flow](images/elm_flow_details.png)
+
+---
+### CSS
+
+- Fulma
+ - Bulma bindings
+ - based on Flexbox
+ - modifiers use a prefix 
+  - `is-`
+  - `has-`
 
 ---
 ### Demos
 ***
+
 ### Saturn
 
 - Standalone Server
@@ -196,7 +222,25 @@
  - dotnet new SAFE --deploy azure
 
 ---
-### App Service
+### Azure App Service Setup
+
+- Azure Active Directory
+- Create new App Registration
+ - Required Permissions
+  - Enable "Windows Azure Service Management API"
+ - Copy Application ID
+
+---
+### Application Directory
+
+    fake build --target appservice 
+        -e subscriptionId={azure subscripton id} 
+        -e clientId={application id} 
+        -e environment={postfix - prdc2018}
+        -e location=eastus
+
+---
+### More Detailed Instructions
 
 - Azure Active Directory App Registration
  - https://safe-stack.github.io/docs/template-azure-registration/#creating-an-app-registration
@@ -204,10 +248,26 @@
  - https://safe-stack.github.io/docs/template-appservice/
 
 ***
+### Summary
+
+- SAFE Stack
+ - Still early but powerful
+ - Azure deployments
+ - Community driven
+
+- Elmish
+ - Model-View-Update architecture
+
+- Saturn
+ - Model-View-Controller
+
+
+***
 ### Extra Resources
 
-- F# for Fun and Profit 
- - https://fsharpforfunandprofit.com/posts/property-based-testing/
+- https://safe-stack.github.io
+- https://elmish.github.io
+- https://saturnframework.org
 
 ***
 
