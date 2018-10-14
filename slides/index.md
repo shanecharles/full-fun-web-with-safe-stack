@@ -53,7 +53,13 @@
 - Any Security
 
 ***
+### SAFE Stack
 
+- Web Stack
+- F# in the front
+- F# in the back
+
+---
 ### SAFE History
 
 - Server
@@ -98,7 +104,7 @@
 
 ---
 
-### SAFE Defaults
+### Current SAFE Defaults
 
 - Saturn
 - Azure
@@ -109,7 +115,7 @@
 ### Setup Requirements
 
 - dotnet core (2.+)
-- `yarn` or `node`
+- `yarn` and `node`
 - `fake` command line tool
 
 ---
@@ -137,6 +143,8 @@
 ### Fable 
 
 - F# to javascript compiler
+- Not limited to SAFE Stack
+ - can be used independently
 - Recently released version 2
 
 ---
@@ -154,19 +162,24 @@
 ![Flow](images/elm_flow.png)
 
 ---
-### Changing State
+### Notifications
 
-- Update
- - Strongly typed messages
-- Triggers
- - Commands: user or state events
- - Subscriptions: external events
+- Messages: Strongly typed 
+- Commands: state events
+- Subscriptions: external events
 
 ---
 ### Flow State
 
 ![Flow](images/elm_flow_details.png)
 
+---
+### Required Functions
+
+- init
+- update
+- view
+  
 ---
 ### CSS
 
@@ -268,6 +281,7 @@
 - https://safe-stack.github.io
 - https://elmish.github.io
 - https://saturnframework.org
+- http://fable.io/repl/
 
 ***
 
