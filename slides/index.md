@@ -218,14 +218,6 @@
 - router
  - formerly `scope`
 
----
-### Router functions
-
-- pipe_through
-- get, getf
-- post
-- forward
-
 ***
 ### Deploy to Azure
 
