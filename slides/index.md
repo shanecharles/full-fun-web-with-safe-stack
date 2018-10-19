@@ -222,8 +222,8 @@
 ### Deploy to Azure
 
 - Docker
+ - dotnet new SAFE --deploy docker
 - App Service
- - Create azure enabled project
  - dotnet new SAFE --deploy azure
 
 ---
@@ -262,6 +262,7 @@
 
 - Elmish
  - Model-View-Update architecture
+ - Can also be used to develop mobile
 
 - Saturn
  - Model-View-Controller
@@ -274,6 +275,8 @@
 - https://elmish.github.io
 - https://saturnframework.org
 - http://fable.io/repl/
+- https://github.com/fsprojects/Fabulous
+ - Elmish to Xamarin Forms
 
 ***
 
