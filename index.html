@@ -1,1 +1,493 @@
-initial
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Full Fun Web with SAFE Stack</title>
+    <meta name="description" content="Introduction to the SAFE web stack.">
+    <meta name="author" content="Shane Charles">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="//code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="//code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/deedle.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <script src="fsharp.formatting/styles/tips.js" type="text/javascript"></script>
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fsreveal.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script language="javascript" type="text/javascript">
+        function init()
+        {
+            websocket = new WebSocket("ws://"+window.location.host+"/websocket");
+            websocket.onmessage = function(evt) { location.reload(); };
+        }
+        window.addEventListener("load", init, false);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="tip" id="fs1">type ContactType =<br />&#160;&#160;| Twitter<br />&#160;&#160;| Blog<br />&#160;&#160;| GitHub<br /><br />Full name: index.ContactType</div>
+<div class="tip" id="fs2">union case ContactType.Twitter: ContactType</div>
+<div class="tip" id="fs3">union case ContactType.Blog: ContactType</div>
+<div class="tip" id="fs4">union case ContactType.GitHub: ContactType</div>
+<div class="tip" id="fs5">val getContactInfo : _arg1:ContactType -&gt; string<br /><br />Full name: index.getContactInfo</div>
+<div class="tip" id="fs6">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section >
+<h3>Full Fun Web with SAFE Stack</h3>
+</section>
+<section >
+<!-- .slide: class="two-floating-elements" -->
+<h3>About me</h3>
+<div class="two-floating-elements">
+<img src="images/mvp_logo_vertical.png" alt="mvp" style="height:145px;border:0;margin: auto;"/>
+    <ul>
+     <li>Shane Charles</li>
+<li>White Light Computing, Inc.</li>
+<li>Functional programming enthusiast</li>
+<li>Board member for Winnipeg .Net UG</li>
+</ul>
+</div>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 11)" onmouseover="showTip(event, 'fs1', 11)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 12)" onmouseover="showTip(event, 'fs2', 12)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 13)" onmouseover="showTip(event, 'fs3', 13)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 14)" onmouseover="showTip(event, 'fs4', 14)" class="i">GitHub</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 15)" onmouseover="showTip(event, 'fs5', 15)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
+  | <span onmouseout="hideTip(event, 'fs2', 16)" onmouseover="showTip(event, 'fs2', 16)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs3', 17)" onmouseover="showTip(event, 'fs3', 17)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs4', 18)" onmouseover="showTip(event, 'fs4', 18)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>You will see</h3>
+<ul>
+<li>What is SAFE Stack</li>
+<li>Setup</li>
+<li>Fable + Elmish</li>
+<li>Saturn</li>
+<li>Azure</li>
+<li>Summary</li>
+</ul>
+</section>
+<section >
+<h3>You will not see</h3>
+<ul>
+<li>Nice Aesthetics</li>
+<li>Good UX</li>
+<li>Any Security</li>
+</ul>
+</section>
+<section >
+<section >
+<h3>SAFE Stack</h3>
+<ul>
+<li>Web Stack</li>
+<li>F# in the front</li>
+<li>F# in the back</li>
+</ul>
+</section>
+<section >
+<h3>SAFE History</h3>
+<ul>
+<li>Server</li>
+<li>Azure</li>
+<li>Fable</li>
+<li>Elmish</li>
+</ul>
+</section>
+<section >
+<h3>Server?</h3>
+<ul>
+<li>Suave</li>
+<li>Azure</li>
+<li>Fable</li>
+<li>Elmish</li>
+</ul>
+</section>
+<section >
+<h3>+ Giraffe</h3>
+<ul>
+<li><code>choose [suave; giraffe]</code></li>
+<li>Azure</li>
+<li>Fable</li>
+<li>Elmish</li>
+</ul>
+</section>
+<section >
+<h3>+ Saturn</h3>
+<ul>
+<li><code>choose [suave; giraffe; saturn]</code></li>
+<li>Azure</li>
+<li>Fable</li>
+<li>Elmish</li>
+</ul>
+</section>
+<section >
+<h3>No Longer Suave</h3>
+<ul>
+<li><code>choose [giraffe; saturn]</code></li>
+<li>Azure</li>
+<li>Fable</li>
+<li>Elmish</li>
+</ul>
+</section>
+<section >
+<h3>Current SAFE Defaults</h3>
+<ul>
+<li>Saturn</li>
+<li>Azure</li>
+<li>Fable</li>
+<li>Elmish</li>
+</ul>
+</section>
+</section>
+<section >
+<section >
+<h3>Setup Requirements</h3>
+<ul>
+<li>dotnet core (2.+)</li>
+<li><code>yarn</code> and <code>node</code></li>
+<li><code>fake</code> command line tool</li>
+</ul>
+</section>
+<section >
+<h3>Installing Fake</h3>
+<blockquote>
+<p>dotnet tool install fake-cli -g</p>
+</blockquote>
+<ul>
+<li>Linux/OSx: <code>~/.dotnet/tools</code></li>
+<li>Windows: <code>%USERPROFILE%\.dotnet\tools</code></li>
+</ul>
+</section>
+<section >
+<h3>Installing and Running SAFE</h3>
+<ul>
+<li>
+Command Line
+<ul>
+<li>dotnet new -i SAFE.Template</li>
+<li>dotnet new SAFE</li>
+<li>fake build --target run</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/bored.gif" alt="bored" /></p>
+</section>
+</section>
+<section >
+<section >
+<h3>Fable</h3>
+<ul>
+<li>F# to javascript compiler</li>
+<li>
+Not limited to SAFE Stack
+<ul>
+<li>can be used independently</li>
+</ul>
+</li>
+<li>Recently released version 2</li>
+</ul>
+</section>
+<section >
+<h3>Elmish</h3>
+<ul>
+<li>front-end paradigm</li>
+<li>
+Elm Architecture
+<ul>
+<li>Model</li>
+<li>View</li>
+<li>Update</li>
+</ul>
+</li>
+</ul>
+</section>
+<section >
+<h3>Flow</h3>
+<p><img src="images/elm_flow.png" alt="Flow" /></p>
+</section>
+<section >
+<h3>Notifications</h3>
+<ul>
+<li>Messages: Strongly typed</li>
+<li>Commands: state events</li>
+<li>Subscriptions: external events</li>
+</ul>
+</section>
+<section >
+<h3>Flow State</h3>
+<p><img src="images/elm_flow_details.png" alt="Flow" /></p>
+</section>
+<section >
+<h3>Required Functions</h3>
+<ul>
+<li>init</li>
+<li>update</li>
+<li>view</li>
+</ul>
+</section>
+<section >
+<h3>CSS</h3>
+<ul>
+<li>
+Fulma
+<ul>
+<li>Bulma bindings</li>
+<li>based on Flexbox</li>
+<li>
+modifiers use a prefix
+<ul>
+<li><code>is-</code></li>
+<li><code>has-</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section >
+<h3>Demos</h3>
+</section>
+</section>
+<section >
+<section >
+<h3>Saturn</h3>
+<ul>
+<li>Standalone Server</li>
+<li>Abstraction on Giraffe</li>
+<li>Inspired by Phoenix (Elixir)</li>
+<li>MVC pattern</li>
+</ul>
+</section>
+<section >
+<h3>Opinionated</h3>
+<ul>
+<li>
+Convention over configuration
+<ul>
+<li>Dapper</li>
+<li>Simple.Migrations</li>
+</ul>
+</li>
+<li>
+Scaffolding scripts
+<ul>
+<li><code>dotnet saturn</code> command line tool</li>
+</ul>
+</li>
+</ul>
+</section>
+<section >
+<h3>Computation Expressions</h3>
+<ul>
+<li>pipeline</li>
+<li>controller</li>
+<li>
+router
+<ul>
+<li>formerly <code>scope</code></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section >
+<section >
+<h3>Deploy to Azure</h3>
+<ul>
+<li>
+Docker
+<ul>
+<li>dotnet new SAFE --deploy docker</li>
+</ul>
+</li>
+<li>
+App Service
+<ul>
+<li>dotnet new SAFE --deploy azure</li>
+</ul>
+</li>
+</ul>
+</section>
+<section >
+<h3>Azure App Service Setup</h3>
+<ul>
+<li>Azure Active Directory</li>
+<li>
+Create new App Registration
+<ul>
+<li>
+Required Permissions
+<ul>
+<li>Enable "Windows Azure Service Management API"</li>
+</ul>
+</li>
+<li>Copy Application ID</li>
+</ul>
+</li>
+</ul>
+</section>
+<section >
+<h3>Application Directory</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">fake</span> <span class="i">build</span> <span class="o">--</span><span class="i">target</span> <span class="i">appservice</span> 
+    <span class="o">-</span><span class="i">e</span> <span class="i">subscriptionId</span><span class="o">=</span>{<span class="i">azure</span> <span class="i">subscripton</span> <span onmouseout="hideTip(event, 'fs6', 9)" onmouseover="showTip(event, 'fs6', 9)" class="i">id</span>} 
+    <span class="o">-</span><span class="i">e</span> <span class="i">clientId</span><span class="o">=</span>{<span class="i">application</span> <span onmouseout="hideTip(event, 'fs6', 10)" onmouseover="showTip(event, 'fs6', 10)" class="i">id</span>} 
+    <span class="o">-</span><span class="i">e</span> <span class="i">environment</span><span class="o">=</span>{<span class="i">postfix</span> <span class="o">-</span> <span class="i">prdc2018</span>}
+    <span class="o">-</span><span class="i">e</span> <span class="i">location</span><span class="o">=</span><span class="i">eastus</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>More Detailed Instructions</h3>
+<ul>
+<li>
+Azure Active Directory App Registration
+<ul>
+<li><a href="https://safe-stack.github.io/docs/template-azure-registration/#creating-an-app-registration">https://safe-stack.github.io/docs/template-azure-registration/#creating-an-app-registration</a></li>
+</ul>
+</li>
+<li>
+Detailed deploy instructions
+<ul>
+<li><a href="https://safe-stack.github.io/docs/template-appservice/">https://safe-stack.github.io/docs/template-appservice/</a></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section >
+<h3>Summary</h3>
+<ul>
+<li>
+SAFE Stack
+<ul>
+<li>Still early but powerful</li>
+<li>Azure deployments</li>
+<li>Community driven</li>
+</ul>
+</li>
+<li>
+Elmish
+<ul>
+<li>Model-View-Update architecture</li>
+<li>Can also be used to develop mobile</li>
+</ul>
+</li>
+<li>
+Saturn
+<ul>
+<li>Model-View-Controller</li>
+</ul>
+</li>
+</ul>
+</section>
+<section >
+<h3>Extra Resources</h3>
+<ul>
+<li><a href="https://safe-stack.github.io">https://safe-stack.github.io</a></li>
+<li><a href="https://elmish.github.io">https://elmish.github.io</a></li>
+<li><a href="https://saturnframework.org">https://saturnframework.org</a></li>
+<li><a href="http://fable.io/repl/">http://fable.io/repl/</a></li>
+<li>
+<a href="https://github.com/fsprojects/Fabulous">https://github.com/fsprojects/Fabulous</a>
+<ul>
+<li>Elmish to Xamarin Forms</li>
+</ul>
+</li>
+</ul>
+</section>
+<section >
+<h3>Thank You</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 11)" onmouseover="showTip(event, 'fs1', 11)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 12)" onmouseover="showTip(event, 'fs2', 12)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 13)" onmouseover="showTip(event, 'fs3', 13)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 14)" onmouseover="showTip(event, 'fs4', 14)" class="i">GitHub</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 15)" onmouseover="showTip(event, 'fs5', 15)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
+  | <span onmouseout="hideTip(event, 'fs2', 16)" onmouseover="showTip(event, 'fs2', 16)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs3', 17)" onmouseover="showTip(event, 'fs3', 17)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs4', 18)" onmouseover="showTip(event, 'fs4', 18)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Add the nohighlight class and data-noescape attribute to code elements that have already been formatted by FSharp.Formatting
+        $('pre.highlighted code').addClass('nohighlight').attr('data-noescape', '');
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+</body>
+</html>
+
